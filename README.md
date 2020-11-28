@@ -38,3 +38,10 @@ In this way, all entries will eventually be filled and so the solution has been 
 * Methods to catch more possibilities of wrong user input
 * GUI interface for input and/or output
 * Improving efficiency of main algorithm
+
+## Release History
+
+* 0.2.0
+    * ADD: Added `isCorrect()` to check whether solution to sudoku follows sudoku rules
+* 0.1.0
+    * Initial release

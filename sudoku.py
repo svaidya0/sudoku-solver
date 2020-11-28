@@ -55,9 +55,24 @@ def solveSudoku(sudoku):
     #At this point all squares should be filled
     return s.rows
 
+# Checks whether sudoku solution is correct
+def isCorrect(sudoku):
+    numbers = [1,2,3,4,5,6,7,8,9]
+    for row in sudoku:
+        if row.count(0) > 0: return False
+        if all(i in row for i in numbers): continue
+        return False
+    for col in sudoku:
+        if all(i in col for i in numbers): continue
+        return False
+    for box in sudoku:
+        if all(i in box for i in numbers): continue
+        return False
+    return True
+
 def main():
 
-    print("\nSudoku Solver v1.0 \n \nEnter your sudoku row by row. For blank spaces enter '0'. \n")
+    print("\nSudoku Solver v0.2.0 \n \nEnter your sudoku row by row. For blank spaces enter '0'. \n")
     print("Here's an example: \n ")
     print("Enter Row 4: 5 1 0 8 9 6 3 2 0")
     print("\nNow follow the prompts to enter your sudoku: \n")
@@ -89,11 +104,14 @@ def main():
     try:
         ans = solveSudoku(grid)
     except:
-        print("There was an error trying to solve the sudoku! \n Please check you entered your sudoku correctly, if you are sure you have entered correctly then you may have found a bug! \n Would very much appreciate if you report this to svaidya0 on github along with sudoku you were trying to solve. \n Thank you :) ")
+        print("There was an error trying to solve the sudoku! \nPlease check you entered your sudoku correctly, if you are sure you have entered correctly then you may have found a bug! \n Would very much appreciate if you report this to svaidya0 on github along with sudoku you were trying to solve. \n Thank you :) ")
 
     print("\nSolution: \n")
     for rows in ans:
         print(rows)
+
+    if not isCorrect(ans):
+        print("Sorry, this solution is not correct! \nPlease check you entered your sudoku correctly, if you are sure you have entered correctly then you may have found a bug! \n Would very much appreciate if you report this to svaidya0 on github along with sudoku you were trying to solve. \nThank you :)")
     
     print(" \n Thank you for using my Sudoku Solver!")
 
