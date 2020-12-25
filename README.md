@@ -35,12 +35,15 @@ In this way, all entries will eventually be filled and so the solution has been 
 
 ## Features to be implemented
 
-* Methods to catch more possibilities of wrong user input
-* GUI interface for input and/or output
+* GUI for input and/or output
 * Improving efficiency of main algorithm
 
 ## Release History
 
+* 0.3.0
+    * ADD: Added `cols()` and `box()` which almost halves the solving time
+    * ADD: Added `correctEntry()` method which checks the intial input
+    * FIX: Corrected the `isCorrect()` method
 * 0.2.0
     * ADD: Added `isCorrect()` to check whether solution to sudoku follows sudoku rules
 * 0.1.0
